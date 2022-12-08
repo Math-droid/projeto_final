@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário</title>
+</head>
+<body>
+    <h1>Calendário</h1>
+    <div id="so"></div>
+
+    <script>
+        let contador="1"
+        while(contador<"2"){
+        let compromisso=prompt("Qual é seu compromisso? ")
+        
+        let dia =Number(prompt("Dia: "))
+        if(dia>31){
+            alert("Formato de dia Errado")
+            break
+        }else if(dia==27){
+            alert("Formato de dia Errado")
+            break
+        }
+        let mes =prompt("Mês: ")
+        if(mes!=1&2&3&4&5&6&7&8&9&10&11&12){
+                alert("formato de mês Errado")
+                break
+            }
+        let ano =Number(prompt("Ano: "))
+        if(ano<2022){
+                alert ("Ano errado")
+                break
+            }
+        let urgencia =prompt("Qual é a urgencia do seu compromisso\n1-baixa\n2-Médio\n3-Alto")
+        let nivUrge=["Baixa","Media","Alta"]
+        if(urgencia=="1"){
+            urgencia =nivUrge[0]
+        }
+        if(urgencia=="2"){
+            urgencia=nivUrge[1]
+        }
+        if(urgencia=="3"){
+            urgencia=nivUrge[2]
+        }
+
+        document.getElementById("so").innerHTML+=
+        compromisso+"<br>"+        
+        dia+"/"+mes+"/"+ano+"<br>"+
+        "Nivel de urgência: "+urgencia+"<br>-------------------</br>"   
+        contador++
+        }
+        
+        </script>
+</body>
+</html>
